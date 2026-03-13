@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000000;
+  color: white
+       }
+  .center {
+    text-align: center;
+  }
+  
+  img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+ .navbar {
+  margin: 0;
+   overflow: hidden;
+  background-color: #333;  
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+  
+.header {
+  overflow: hidden;
+  background-color: #000000;
+  padding: 20px 10px;
+}
+.header a {
+  margin: 0;
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+.header a:hover {
+  background-color: #4C4C4C;
+  color: white;
+}
+.header a.active {
+  background-color: #1cc0e6;
+  color: white;
+}
+.header-right {
+  float: right;
+}
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+  
+  img {
+    display: block;
+    margin-left: auto
+    margin-right: auto
+  }
+  
+  a {
+  color: #1cc0e6
+  }
+  
+  
+</style>
+  
+<title>Browner Designs - About</title>
+  
+</head>
+  
+<body>
+ 
+    
+<div class="header">
+  
+  <a href="index.html"> <img src="Images/bd500.png" align="left" style="width:60px;height:60px"></a>
+   <a href="designs.html" class="logo">Instructional Design</a>
+  <div class="header-right">
+    <a href="index.html">Home</a>
+	<a href="resume.html">Resume</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a class="active" href="contact.html">Contact</a>
+  </div>
+</div>
+  
+    <h2 style="text-align:center;">Please contact us with any questions.</h2>
+  
+     <div class="center">
+     
+      <p>
+    
+        If you would like more information, let us know what you have in mind.</p>
+  
+  
+     </div>
+  
+<div style="text-align:center">                                                                                 
+  <form action = "POST" data-netlify="true">
+      <div class="fields">
+        <div class="field half">
+          <input type="text" name="name"
+                 id="name" placeholder="Name" />
+        </div>
+	      <br>
+	      
+        <div class="field half">
+          <input type="email" name="email"
+                 id="email" placeholder="Email" />
+        </div>
+	      <br>
+	      
+        <div class="field">
+          <textarea name="message" id="message"
+                    placeholder="Message"
+                    rows="7"></textarea>
+        </div>
+	      <br>
+	      
+        <div class="field">
+          <input type="file" name="myfile" id="myfile"
+                    placeholder="Upload Attachment"
+                    rows="7"/>
+        </div>
+	      <br>
+
+<input type="submit" value="Submit">
+        
+  </form>
+  </div>
+        <br>
+        
+  
+
+  
+</body>
+</html>
