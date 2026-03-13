@@ -116,39 +116,88 @@ body {
   
      </div>
   
-<div style="text-align:center">                                                                                 
-  <form action = "POST" data-netlify="true">
-      <div class="fields">
-        <div class="field half">
-          <input type="text" name="name"
-                 id="name" placeholder="Name" />
-        </div>
-	      <br>
-	      
-        <div class="field half">
-          <input type="email" name="email"
-                 id="email" placeholder="Email" />
-        </div>
-	      <br>
-	      
-        <div class="field">
-          <textarea name="message" id="message"
-                    placeholder="Message"
-                    rows="7"></textarea>
-        </div>
-	      <br>
-	      
-        <div class="field">
-          <input type="file" name="myfile" id="myfile"
-                    placeholder="Upload Attachment"
-                    rows="7"/>
-        </div>
-	      <br>
+<div style="text-align:center;">
 
-<input type="submit" value="Submit">
-        
+  <form method="POST" data-netlify="true"
+        style="
+          max-width:600px;
+          width:90%;
+          margin:0 auto;
+          padding:20px;
+          box-sizing:border-box;
+        ">
+
+    <div class="fields">
+
+      <div class="field half">
+        <input type="text" name="name" id="name" placeholder="Name"
+               style="
+                 width:100%;
+                 padding:12px;
+                 margin:8px 0;
+                 border-radius:6px;
+                 border:none;
+                 font-size:16px;
+                 box-sizing:border-box;
+               ">
+      </div>
+
+      <div class="field half">
+        <input type="email" name="email" id="email" placeholder="Email"
+               style="
+                 width:100%;
+                 padding:12px;
+                 margin:8px 0;
+                 border-radius:6px;
+                 border:none;
+                 font-size:16px;
+                 box-sizing:border-box;
+               ">
+      </div>
+
+      <div class="field">
+        <textarea name="message" id="message" placeholder="Message" rows="7"
+                  style="
+                    width:100%;
+                    padding:12px;
+                    margin:8px 0;
+                    border-radius:6px;
+                    border:none;
+                    font-size:16px;
+                    box-sizing:border-box;
+                  "></textarea>
+      </div>
+
+      <div class="field">
+        <input type="file" name="myfile" id="myfile"
+               style="
+                 width:100%;
+                 padding:12px;
+                 margin:8px 0;
+                 border-radius:6px;
+                 border:none;
+                 font-size:16px;
+                 box-sizing:border-box;
+               ">
+      </div>
+
+      <input type="submit" value="Submit"
+             style="
+               width:100%;
+               padding:14px;
+               margin-top:10px;
+               background-color:#000080;
+               color:white;
+               border:none;
+               border-radius:6px;
+               font-size:18px;
+               cursor:pointer;
+               box-sizing:border-box;
+             ">
+
+    </div>
   </form>
-  </div>
+</div>
         <br>
         
   
