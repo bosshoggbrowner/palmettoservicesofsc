@@ -90,43 +90,13 @@ a { color: #4EA5D9; }
     display: block;
   }
 }
-
-/* PRODUCT CARD STYLES */
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-}
-
-.price {
-  color: grey;
-  font-size: 22px;
-}
-
-.card button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: #1cc0e6;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-
-.card button:hover {
-  opacity: 0.7;
-}
 </style>
 
 </head>
 
 <body>
 
-<!-- UPDATED HEADER WITH MATCHING MENU -->
+<!-- HEADER -->
 <div class="header">
 
   <a href="index.html">
@@ -135,10 +105,8 @@ a { color: #4EA5D9; }
 
   <a href="services.html" class="logo">Palmetto Services LLC of SC</a>
 
-  <!-- HAMBURGER ICON -->
   <span id="menuIcon" onclick="toggleMenu()">☰</span>
 
-  <!-- NAV LINKS -->
   <div class="header-right" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
@@ -150,7 +118,6 @@ a { color: #4EA5D9; }
 </div>
 
 <!-- PAGE CONTENT -->
-<!-- PHOTO COLLAGE SECTION -->
 <div style="width:100%;padding:20px 5%;box-sizing:border-box;">
 
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;">
@@ -158,44 +125,108 @@ a { color: #4EA5D9; }
     <!-- Image 1 -->
     <div style="flex:1 1 calc(33.33% - 20px);max-width:33.33%;">
       <img src="Images/Feature1.jpg"
-           style="width:100%;height:auto;border-radius:8px;">
+           onclick="openPopup(this.src)"
+           style="width:100%;height:auto;border-radius:8px;cursor:pointer;">
     </div>
 
     <!-- Image 2 -->
     <div style="flex:1 1 calc(33.33% - 20px);max-width:33.33%;">
       <img src="Images/Feature2.jpg"
-           style="width:100%;height:auto;border-radius:8px;">
+           onclick="openPopup(this.src)"
+           style="width:100%;height:auto;border-radius:8px;cursor:pointer;">
     </div>
 
     <!-- Image 3 -->
     <div style="flex:1 1 calc(33.33% - 20px);max-width:33.33%;">
       <img src="Images/Feature3.jpg"
-           style="width:100%;height:auto;border-radius:8px;">
+           onclick="openPopup(this.src)"
+           style="width:100%;height:auto;border-radius:8px;cursor:pointer;">
     </div>
 
     <!-- Image 4 -->
     <div style="flex:1 1 calc(33.33% - 20px);max-width:33.33%;">
       <img src="Images/Feature4.jpg"
-           style="width:100%;height:auto;border-radius:8px;">
+           onclick="openPopup(this.src)"
+           style="width:100%;height:auto;border-radius:8px;cursor:pointer;">
     </div>
 
     <!-- Image 5 -->
     <div style="flex:1 1 calc(33.33% - 20px);max-width:33.33%;">
       <img src="Images/Feature5.jpg"
-           style="width:100%;height:auto;border-radius:8px;">
+           onclick="openPopup(this.src)"
+           style="width:100%;height:auto;border-radius:8px;cursor:pointer;">
     </div>
 
     <!-- Image 6 -->
     <div style="flex:1 1 calc(33.33% - 20px);max-width:33.33%;">
       <img src="Images/Feature6.jpg"
-           style="width:100%;height:auto;border-radius:8px;">
+           onclick="openPopup(this.src)"
+           style="width:100%;height:auto;border-radius:8px;cursor:pointer;">
     </div>
 
   </div>
 
 </div>
 
-<!-- FOOTER TEXT -->
+<!-- POPUP OVERLAY -->
+<div id="imgPopup"
+     style="
+       display:none;
+       position:fixed;
+       top:0;
+       left:0;
+       width:100%;
+       height:100%;
+       background:rgba(0,0,0,0.95);
+       z-index:9999;
+     ">
+
+  <!-- IMAGE WRAPPER -->
+  <div style="
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+        max-width:100%;
+        max-height:100%;
+      ">
+
+    <!-- CLOSE BUTTON ON IMAGE -->
+    <span onclick="closePopup()"
+          style="
+            position:absolute;
+            top:-10px;
+            right:-10px;
+            background:rgba(0,0,0,0.7);
+            width:40px;
+            height:40px;
+            border-radius:20px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:26px;
+            color:white;
+            cursor:pointer;
+            z-index:10000;
+          ">
+      ✕
+    </span>
+
+    <!-- FULL‑SIZE IMAGE -->
+    <img id="popupImg"
+         style="
+           max-width:100vw;
+           max-height:100vh;
+           width:auto;
+           height:auto;
+           object-fit:contain;
+           border-radius:8px;
+         ">
+  </div>
+
+</div>
+
+<!-- FOOTER -->
 <div class="center">
   <p>
     <br>
@@ -203,12 +234,21 @@ a { color: #4EA5D9; }
   </p>
   <br>
 </div>
-  
-<!-- MOBILE MENU SCRIPT -->
+
+<!-- SCRIPTS -->
 <script>
 function toggleMenu() {
   var menu = document.getElementById("mobileMenu");
   menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+
+function openPopup(src) {
+  document.getElementById("popupImg").src = src;
+  document.getElementById("imgPopup").style.display = "block";
+}
+
+function closePopup() {
+  document.getElementById("imgPopup").style.display = "none";
 }
 </script>
 
