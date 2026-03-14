@@ -158,42 +158,105 @@ a { color: #4EA5D9; }
     <!-- Image 1 -->
     <div style="flex:1 1 calc(33.33% - 20px);max-width:33.33%;">
       <img src="Images/Feature1.jpg"
-           style="width:100%;height:auto;border-radius:8px;">
+           onclick="openPopup(this.src)"
+           style="width:100%;height:auto;border-radius:8px;cursor:pointer;">
     </div>
 
     <!-- Image 2 -->
     <div style="flex:1 1 calc(33.33% - 20px);max-width:33.33%;">
       <img src="Images/Feature2.jpg"
-           style="width:100%;height:auto;border-radius:8px;">
+           onclick="openPopup(this.src)"
+           style="width:100%;height:auto;border-radius:8px;cursor:pointer;">
     </div>
 
     <!-- Image 3 -->
     <div style="flex:1 1 calc(33.33% - 20px);max-width:33.33%;">
       <img src="Images/Feature3.jpg"
-           style="width:100%;height:auto;border-radius:8px;">
+           onclick="openPopup(this.src)"
+           style="width:100%;height:auto;border-radius:8px;cursor:pointer;">
     </div>
 
     <!-- Image 4 -->
     <div style="flex:1 1 calc(33.33% - 20px);max-width:33.33%;">
       <img src="Images/Feature4.jpg"
-           style="width:100%;height:auto;border-radius:8px;">
+           onclick="openPopup(this.src)"
+           style="width:100%;height:auto;border-radius:8px;cursor:pointer;">
     </div>
 
     <!-- Image 5 -->
     <div style="flex:1 1 calc(33.33% - 20px);max-width:33.33%;">
       <img src="Images/Feature5.jpg"
-           style="width:100%;height:auto;border-radius:8px;">
+           onclick="openPopup(this.src)"
+           style="width:100%;height:auto;border-radius:8px;cursor:pointer;">
     </div>
 
     <!-- Image 6 -->
     <div style="flex:1 1 calc(33.33% - 20px);max-width:33.33%;">
       <img src="Images/Feature6.jpg"
-           style="width:100%;height:auto;border-radius:8px;">
+           onclick="openPopup(this.src)"
+           style="width:100%;height:auto;border-radius:8px;cursor:pointer;">
     </div>
 
   </div>
 
 </div>
+
+<!-- POPUP OVERLAY -->
+<div id="imgPopup"
+     style="
+       display:none;
+       position:fixed;
+       top:0;
+       left:0;
+       width:100%;
+       height:100%;
+       background:rgba(0,0,0,0.95);
+       z-index:9999;
+       text-align:center;
+     ">
+
+  <!-- CLOSE BUTTON -->
+  <span onclick="closePopup()"
+        style="
+          position:absolute;
+          top:15px;
+          right:20px;
+          font-size:40px;
+          color:white;
+          cursor:pointer;
+          font-weight:bold;
+          z-index:10000;
+        ">
+    ✕
+  </span>
+
+  <!-- FULL‑SIZE IMAGE -->
+  <img id="popupImg"
+       style="
+         position:absolute;
+         top:50%;
+         left:50%;
+         transform:translate(-50%, -50%);
+         max-width:100%;
+         max-height:100%;
+         width:auto;
+         height:auto;
+         object-fit:contain;
+         border-radius:8px;
+       ">
+</div>
+
+<!-- POPUP SCRIPT -->
+<script>
+function openPopup(src) {
+  document.getElementById("popupImg").src = src;
+  document.getElementById("imgPopup").style.display = "block";
+}
+
+function closePopup() {
+  document.getElementById("imgPopup").style.display = "none";
+}
+</script>
 
 <!-- FOOTER TEXT -->
 <div class="center">
