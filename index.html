@@ -3,95 +3,192 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000000;
+  color: white;
+}
+
+.center {
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #000000;
+  padding: 20px 10px;
+}
+
+.header a {
+  margin: 0;
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #4C4C4C;
+  color: white;
+}
+
+.header a.active {
+  background-color: #000080;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+/* MOBILE MENU */
+#menuIcon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  float: right;
+  padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .header-right {
+    display: none;
+    width: 100%;
+    background-color: #000000;
+    text-align: left;
+    padding-top: 10px;
+    float: none;
+  }
+
+  .header a {
+    float: none;
+    display: block;
+    padding: 14px;
+    border-bottom: 1px solid #333;
+  }
+
+  #menuIcon {
+    display: block;
+  }
+}
+
+/* SLIDESHOW CSS */
+* { box-sizing: border-box; }
+img { vertical-align: middle; }
+.container { position: relative; }
+.mySlides { display: none; }
+.cursor { cursor: pointer; }
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  user-select: none;
+}
+
+.next { right: 0; }
+.prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active, .demo:hover {
+  opacity: 1;
+}
+
+a { color: #1cc0e6; }
+</style>
+
 <title>Palmetto Services LLC of SC - Home</title>
 </head>
 
-<body style="font-family:Arial,Helvetica,sans-serif;background-color:#000;color:white;margin:0;">
+<body>
 
 <!-- HEADER -->
-<div style="overflow:hidden;background-color:#000;padding:20px 10px;position:relative;z-index:10000;">
+<div class="header">
 
-  <!-- Logo -->
   <a href="index.html">
-    <img src="Images/bd500.png" style="width:60px;height:60px;float:left;">
+    <img src="Images/bd500.png" align="left" style="width:60px;height:60px">
   </a>
 
-  <!-- Site Title -->
-  <a href="services.html" style="margin:0;float:left;color:white;text-align:center;padding:12px;text-decoration:none;font-size:25px;line-height:25px;font-weight:bold;">
-    Palmetto Services LLC of SC
-  </a>
+  <a href="services.html" class="logo">Palmetto Services LLC of SC</a>
 
   <!-- HAMBURGER ICON -->
-  <span id="menuIcon"
-        onclick="toggleMenu()"
-        style="display:none;font-size:30px;cursor:pointer;color:white;float:right;padding:10px;">
-    ☰
-  </span>
+  <span id="menuIcon" onclick="toggleMenu()">☰</span>
 
-  <!-- DESKTOP NAV -->
-  <div id="desktopMenu" style="float:right;">
-    <a href="index.html" style="color:white;padding:12px;text-decoration:none;font-size:18px;border-radius:4px;">Home</a>
-    <a href="services.html" style="color:white;padding:12px;text-decoration:none;font-size:18px;border-radius:4px;">Services</a>
-    <a href="portfolio.html" style="color:white;padding:12px;text-decoration:none;font-size:18px;border-radius:4px;">Portfolio</a>
-    <a href="about.html" style="color:white;padding:12px;text-decoration:none;font-size:18px;border-radius:4px;">About</a>
-    <a href="contact.html" style="color:white;padding:12px;text-decoration:none;font-size:18px;border-radius:4px;">Contact</a>
+  <!-- NAV LINKS -->
+  <div class="header-right" id="mobileMenu">
+    <a class="active" href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
   </div>
 
 </div>
 
-<!-- DESKTOP HOVER + ACTIVE COLORS -->
-<style>
-#desktopMenu a:hover {
-  background-color:#4C4C4C;
-  color:white;
-}
-#desktopMenu a:active {
-  background-color:#000080;
-  color:white;
-}
-</style>
+<!-- MAIN Cover Image -->
 
-<!-- MOBILE SLIDE-OUT MENU (RIGHT SIDE) -->
-<div id="mobileMenu"
-     style="
-       position:fixed;
-       top:0;
-       right:-260px;
-       width:260px;
-       height:100%;
-       background-color:#000;
-       padding-top:80px;
-       transition:right 0.3s ease;
-       z-index:20000;
-       display:block;
-     ">
-  <a href="index.html" style="display:block;padding:16px;border-bottom:1px solid #333;color:white;text-decoration:none;font-size:20px;">Home</a>
-  <a href="services.html" style="display:block;padding:16px;border-bottom:1px solid #333;color:white;text-decoration:none;font-size:20px;">Services</a>
-  <a href="portfolio.html" style="display:block;padding:16px;border-bottom:1px solid #333;color:white;text-decoration:none;font-size:20px;">Portfolio</a>
-  <a href="about.html" style="display:block;padding:16px;border-bottom:1px solid #333;color:white;text-decoration:none;font-size:20px;">About</a>
-  <a href="contact.html" style="display:block;padding:16px;border-bottom:1px solid #333;color:white;text-decoration:none;font-size:20px;">Contact</a>
-</div>
-
-<!-- MOBILE MENU RESPONSIVE RULES -->
-<style>
-@media screen and (max-width: 600px) {
-  #desktopMenu { display:none; }
-  #menuIcon { display:block !important; }
-}
-</style>
-
-<!-- MAIN HERO IMAGE -->
 <div style="
-  width:100%;
-  height:60vh;
-  min-height:400px;
-  background-image:url('Images/Kitchen1.jpg');
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  background-image: url('Images/Kitchen1.jpg');
+  background-size: contain;
+  background-position: center top;
+  background-repeat: no-repeat;
 ">
 </div>
-
+  
 <!-- ABOUT TEXT -->
 <div style="max-width:60%;width:90%;margin:0 auto;text-align:left;font-size:18px;line-height:1.6;">
   <p>
@@ -111,9 +208,11 @@
      color:white;
      text-align:center;
      text-decoration:none;
+     border:none;
      border-radius:6px;
      font-size:18px;
      cursor:pointer;
+     box-sizing:border-box;
    ">
   Get Started
 </a>
@@ -122,76 +221,87 @@
 <h2 style="text-align:center">Check Out The<br>Featured Gallery From Our Portfolio</h2>
 
 <!-- SLIDESHOW -->
-<div class="container" style="position:relative;">
+<div class="container">
 
-  <div class="mySlides" style="display:none;">
-    <div style="color:#f2f2f2;font-size:12px;padding:8px 12px;position:absolute;top:0;">1 / 6</div>
-    <a href="portfolio.html" target="_blank">
-      <img src="Images/Feature1.jpg" style="width:40%;display:block;margin:auto;">
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <a href="Sample_Acknowledgement/story.html" target="_blank">
+      <img src="Images/sampleacknowledgement.png" style="width:40%">
     </a>
   </div>
 
-  <div class="mySlides" style="display:none;">
-    <div style="color:#f2f2f2;font-size:12px;padding:8px 12px;position:absolute;top:0;">2 / 6</div>
-    <a href="portfolio.html" target="_blank">
-      <img src="Images/Feature2.jpg" style="width:40%;display:block;margin:auto;">
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <a href="https://www.etsy.com/listing/776766775/chicks-dig-dad-bods-tank-top" target="_blank">
+      <img src="Images/chicksdigdadbodsmockupwood1000.png" style="width:40%">
     </a>
   </div>
 
-  <div class="mySlides" style="display:none;">
-    <div style="color:#f2f2f2;font-size:12px;padding:8px 12px;position:absolute;top:0;">3 / 6</div>
-    <a href="portfolio.html" target="_blank">
-      <img src="Images/Feature3.jpg" style="width:40%;display:block;margin:auto;">
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <a href="https://www.etsy.com/listing/780047451/hyrule-field-equestrian-short-sleeve" target="_blank">
+      <img src="Images/hyrulefieldequestrianmockup.png" style="width:40%">
     </a>
   </div>
 
-  <div class="mySlides" style="display:none;">
-    <div style="color:#f2f2f2;font-size:12px;padding:8px 12px;position:absolute;top:0;">4 / 6</div>
-    <a href="portfolio.html" target="_blank">
-      <img src="Images/Feature4.jpg" style="width:40%;display:block;margin:auto;">
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <a href="https://www.etsy.com/listing/766441710/mushroom-kingdom-high-jump-unisex-hoodie" target="_blank">
+      <img src="Images/mushroomkingdomhighjumpmockup.png" style="width:40%">
     </a>
   </div>
 
-  <div class="mySlides" style="display:none;">
-    <div style="color:#f2f2f2;font-size:12px;padding:8px 12px;position:absolute;top:0;">5 / 6</div>
-    <a href="portfolio.html" target="_blank">
-      <img src="Images/Feature5.jpg" style="width:40%;display:block;margin:auto;">
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <a href="https://www.etsy.com/listing/781400675/three-hearts-short-sleeve-unisex-t-shirt" target="_blank">
+      <img src="Images/threeheartsmockup.png" style="width:40%">
     </a>
   </div>
 
-  <div class="mySlides" style="display:none;">
-    <div style="color:#f2f2f2;font-size:12px;padding:8px 12px;position:absolute;top:0;">6 / 6</div>
-    <a href="portfolio.html" target="_blank">
-      <img src="Images/Feature6.jpg" style="width:40%;display:block;margin:auto;">
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <a href="https://www.etsy.com/listing/780031253/hard-knocks-university-short-sleeve" target="_blank">
+      <img src="Images/hardknocksuniversitymockup.png" style="width:40%">
     </a>
   </div>
 
   <!-- ARROWS -->
-  <a onclick="plusSlides(-1)" style="cursor:pointer;position:absolute;top:40%;left:0;padding:16px;color:white;font-weight:bold;font-size:20px;">❮</a>
-  <a onclick="plusSlides(1)" style="cursor:pointer;position:absolute;top:40%;right:0;padding:16px;color:white;font-weight:bold;font-size:20px;">❯</a>
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
 
-  <div style="text-align:center;background-color:#222;padding:2px 16px;color:white;">
+  <div class="caption-container">
     <p id="caption"></p>
   </div>
 
   <!-- THUMBNAILS -->
-  <div style="display:flex;flex-wrap:wrap;justify-content:center;">
-    <img class="demo" src="Images/Feature1.jpg" onclick="currentSlide(1)" style="width:80px;margin:5px;opacity:0.6;cursor:pointer;">
-    <img class="demo" src="Images/Feature2.jpg" onclick="currentSlide(2)" style="width:80px;margin:5px;opacity:0.6;cursor:pointer;">
-    <img class="demo" src="Images/Feature3.jpg" onclick="currentSlide(3)" style="width:80px;margin:5px;opacity:0.6;cursor:pointer;">
-    <img class="demo" src="Images/Feature4.jpg" onclick="currentSlide(4)" style="width:80px;margin:5px;opacity:0.6;cursor:pointer;">
-    <img class="demo" src="Images/Feature5.jpg" onclick="currentSlide(5)" style="width:80px;margin:5px;opacity:0.6;cursor:pointer;">
-    <img class="demo" src="Images/Feature6.jpg" onclick="currentSlide(6)" style="width:80px;margin:5px;opacity:0.6;cursor:pointer;">
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="Images/sampleacknowledgement.png" style="width:80%" onclick="currentSlide(1)" alt="Sample Acknowledgement">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Images/chicksdigdadbodsmockupwood1000.png" style="width:80%" onclick="currentSlide(2)" alt="Chicks Dig Dad Bods Tank Top">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Images/hyrulefieldequestrianmockup.png" style="width:80%" onclick="currentSlide(3)" alt="Hyrule Field Equestrian T-Shirt">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Images/mushroomkingdomhighjumpmockup.png" style="width:80%" onclick="currentSlide(4)" alt="Mushroom Kingdom High Jump Hoodie">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Images/threeheartsmockup.png" style="width:80%" onclick="currentSlide(5)" alt="Three Hearts T-Shirt">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Images/hardknocksuniversitymockup.png" style="width:80%" onclick="currentSlide(6)" alt="Hard Knocks University T-Shirt">
+    </div>
   </div>
-
 </div>
 
-<!-- FOOTER -->
-<div style="text-align:center;">
+<!-- FOOTER TEXT -->
+<div class="center">
   <p>
-    <br>Check out the <a href="designs.html" style="color:#4EA5D9;">Portfolio Page</a> to see more.
+    <br>Check out the <a href="designs.html">Portfolio Page</a> to see more.
     <br><br>
-    If you would like more information, visit our <a href="contact.html" style="color:#4EA5D9;">Contact Page</a>.
+    If you would like more information, visit our <a href="contact.html">Contact Page</a>.
   </p>
 </div>
 
@@ -199,7 +309,7 @@
 <script>
 function toggleMenu() {
   var menu = document.getElementById("mobileMenu");
-  menu.style.right = (menu.style.right === "0px") ? "-260px" : "0px";
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
 }
 </script>
 
@@ -208,8 +318,13 @@ function toggleMenu() {
 var slideIndex = 1;
 showSlides(slideIndex);
 
-function plusSlides(n) { showSlides(slideIndex += n); }
-function currentSlide(n) { showSlides(slideIndex = n); }
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
 function showSlides(n) {
   var i;
@@ -220,14 +335,18 @@ function showSlides(n) {
   if (n > slides.length) { slideIndex = 1 }
   if (n < 1) { slideIndex = slides.length }
 
-  for (i = 0; i < slides.length; i++) slides[i].style.display = "none";
-  for (i = 0; i < dots.length; i++) dots[i].style.opacity = "0.6";
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
 
   slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].style.opacity = "1";
+  dots[slideIndex - 1].className += " active";
   captionText.innerHTML = dots[slideIndex - 1].alt;
 }
 </script>
 
 </body>
-</html>
