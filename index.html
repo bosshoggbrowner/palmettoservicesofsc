@@ -30,27 +30,39 @@
 
   <!-- DESKTOP NAV -->
   <div id="desktopMenu" style="float:right;">
-    <a href="index.html" style="color:white;padding:12px;text-decoration:none;font-size:18px;">Home</a>
-    <a href="services.html" style="color:white;padding:12px;text-decoration:none;font-size:18px;">Services</a>
-    <a href="portfolio.html" style="color:white;padding:12px;text-decoration:none;font-size:18px;">Portfolio</a>
-    <a href="about.html" style="color:white;padding:12px;text-decoration:none;font-size:18px;">About</a>
-    <a href="contact.html" style="color:white;padding:12px;text-decoration:none;font-size:18px;">Contact</a>
+    <a href="index.html" style="color:white;padding:12px;text-decoration:none;font-size:18px;border-radius:4px;">Home</a>
+    <a href="services.html" style="color:white;padding:12px;text-decoration:none;font-size:18px;border-radius:4px;">Services</a>
+    <a href="portfolio.html" style="color:white;padding:12px;text-decoration:none;font-size:18px;border-radius:4px;">Portfolio</a>
+    <a href="about.html" style="color:white;padding:12px;text-decoration:none;font-size:18px;border-radius:4px;">About</a>
+    <a href="contact.html" style="color:white;padding:12px;text-decoration:none;font-size:18px;border-radius:4px;">Contact</a>
   </div>
 
 </div>
 
-<!-- MOBILE SLIDE-OUT MENU -->
+<!-- DESKTOP HOVER + ACTIVE COLORS -->
+<style>
+#desktopMenu a:hover {
+  background-color:#4C4C4C;
+  color:white;
+}
+#desktopMenu a:active {
+  background-color:#000080;
+  color:white;
+}
+</style>
+
+<!-- MOBILE SLIDE-OUT MENU (RIGHT SIDE) -->
 <div id="mobileMenu"
      style="
        position:fixed;
        top:0;
-       left:-260px;
+       right:-260px;
        width:260px;
        height:100%;
        background-color:#000;
        padding-top:80px;
-       transition:left 0.3s ease;
-       z-index:20000; /* ABOVE HEADER */
+       transition:right 0.3s ease;
+       z-index:20000;
        display:block;
      ">
   <a href="index.html" style="display:block;padding:16px;border-bottom:1px solid #333;color:white;text-decoration:none;font-size:20px;">Home</a>
@@ -187,7 +199,7 @@
 <script>
 function toggleMenu() {
   var menu = document.getElementById("mobileMenu");
-  menu.style.left = (menu.style.left === "0px") ? "-260px" : "0px";
+  menu.style.right = (menu.style.right === "0px") ? "-260px" : "0px";
 }
 </script>
 
@@ -218,3 +230,4 @@ function showSlides(n) {
 </script>
 
 </body>
+</html>
