@@ -1,155 +1,11 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Palmetto Services LLC of SC - Portfolio</title>
-
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #000000;
-  color: white;
-  margin: 0;
-}
-
-.center { text-align: center; }
-
-a { color: #4EA5D9; }
-
-/* HEADER */
-.header {
-  overflow: hidden;
-  background-color: #000000;
-  padding: 20px 10px;
-  position: relative;
-  z-index: 10000;
-}
-
-.header a {
-  margin: 0;
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 4px;
-}
-
-.header a.logo {
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.header a:hover {
-  background-color: #4C4C4C;
-  color: white;
-}
-
-.header a.active {
-  background-color: #000080;
-  color: white;
-}
-
-.header-right {
-  float: right;
-}
-
-/* HAMBURGER ICON */
-#menuIcon {
-  display: none;
-  font-size: 30px;
-  cursor: pointer;
-  color: white;
-  float: right;
-  padding: 10px;
-}
-
-/* MOBILE MENU */
-@media screen and (max-width: 600px) {
-  .header-right {
-    display: none;
-    width: 100%;
-    background-color: #000000;
-    text-align: left;
-    padding-top: 10px;
-    float: none;
-  }
-
-  .header a {
-    float: none;
-    display: block;
-    padding: 14px;
-    border-bottom: 1px solid #333;
-  }
-
-  #menuIcon {
-    display: block;
-  }
-}
-
-/* PRODUCT CARD STYLES */
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-}
-
-.price {
-  color: grey;
-  font-size: 22px;
-}
-
-.card button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: #1cc0e6;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-
-.card button:hover {
-  opacity: 0.7;
-}
-</style>
-
+  <meta charset="utf-8">
+  <title>Collage Test</title>
 </head>
+<body style="margin:0;padding:0;background:#000;color:#fff;font-family:Arial,Helvetica,sans-serif;">
 
-<body>
-
-<!-- UPDATED HEADER WITH MATCHING MENU -->
-<div class="header">
-
-  <a href="index.html">
-    <img src="Images/PSLogo.jpg" align="left" style="width:60px;height:60px;">
-  </a>
-
-  <a href="services.html" class="logo">Palmetto Services LLC of SC</a>
-
-  <!-- HAMBURGER ICON -->
-  <span id="menuIcon" onclick="toggleMenu()">☰</span>
-
-  <!-- NAV LINKS -->
-  <div class="header-right" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a class="active" href="portfolio.html">Portfolio</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
-</div>
-
-<!-- PAGE CONTENT -->
 <!-- PHOTO COLLAGE SECTION -->
 <div style="width:100%;padding:20px 5%;box-sizing:border-box;">
 
@@ -214,23 +70,26 @@ a { color: #4EA5D9; }
        z-index:9999;
      ">
 
-  <!-- CLOSE BUTTON (ALWAYS ON TOP) -->
-  <span onclick="closePopup()"
-        style="
-          position:fixed;
-          top:15px;
-          right:20px;
-          font-size:45px;
-          color:white;
-          cursor:pointer;
-          font-weight:bold;
-          z-index:10000;
-          line-height:1;
-        ">
-    ✕
-  </span>
+  <!-- CLOSE BUTTON -->
+  <div onclick="closePopup()"
+       style="
+         position:fixed;
+         top:10px;
+         right:15px;
+         width:40px;
+         height:40px;
+         background:rgba(0,0,0,0.7);
+         border-radius:20px;
+         display:flex;
+         align-items:center;
+         justify-content:center;
+         cursor:pointer;
+         z-index:10000;
+       ">
+    <span style="color:#fff;font-size:26px;font-weight:bold;line-height:1;">✕</span>
+  </div>
 
-  <!-- FULL‑SIZE IMAGE -->
+  <!-- FULL-SIZE IMAGE -->
   <img id="popupImg"
        style="
          position:absolute;
@@ -246,7 +105,6 @@ a { color: #4EA5D9; }
        ">
 </div>
 
-<!-- POPUP SCRIPT -->
 <script>
 function openPopup(src) {
   document.getElementById("popupImg").src = src;
@@ -255,23 +113,6 @@ function openPopup(src) {
 
 function closePopup() {
   document.getElementById("imgPopup").style.display = "none";
-}
-</script>
-
-<!-- FOOTER TEXT -->
-<div class="center">
-  <p>
-    <br>
-    If you would like more information, visit our <a href="contact.html">Contact Page</a>.
-  </p>
-  <br>
-</div>
-  
-<!-- MOBILE MENU SCRIPT -->
-<script>
-function toggleMenu() {
-  var menu = document.getElementById("mobileMenu");
-  menu.style.display = (menu.style.display === "block") ? "none" : "block";
 }
 </script>
 
