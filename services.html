@@ -123,31 +123,50 @@ a { color: #4EA5D9; }
 <!-- AUTO CAROUSEL SECTION -->
 <div style="width:100%;max-width:700px;margin:30px auto;text-align:center;position:relative;">
 
-  <!-- Slides (half-height images) -->
-  <img class="autoSlide" src="Images/slide1.jpg" style="width:100%;height:25vw;object-fit:cover;display:none;border-radius:8px;">
-  <img class="autoSlide" src="Images/slide2.jpg" style="width:100%;height:25vw;object-fit:cover;display:none;border-radius:8px;">
-  <img class="autoSlide" src="Images/slide3.jpg" style="width:100%;height:25vw;object-fit:cover;display:none;border-radius:8px;">
-  <img class="autoSlide" src="Images/slide4.jpg" style="width:100%;height:25vw;object-fit:cover;display:none;border-radius:8px;">
-  <img class="autoSlide" src="Images/slide5.jpg" style="width:100%;height:25vw;object-fit:cover;display:none;border-radius:8px;">
-  <img class="autoSlide" src="Images/slide6.jpg" style="width:100%;height:25vw;object-fit:cover;display:none;border-radius:8px;">
+  <!-- Slides -->
+  <img class="autoSlide" src="Images/slide1.jpg" style="width:100%;display:none;border-radius:8px;object-fit:contain;">
+  <img class="autoSlide" src="Images/slide2.jpg" style="width:100%;display:none;border-radius:8px;object-fit:contain;">
+  <img class="autoSlide" src="Images/slide3.jpg" style="width:100%;display:none;border-radius:8px;object-fit:contain;">
+  <img class="autoSlide" src="Images/slide4.jpg" style="width:100%;display:none;border-radius:8px;object-fit:contain;">
+  <img class="autoSlide" src="Images/slide5.jpg" style="width:100%;display:none;border-radius:8px;object-fit:contain;">
+  <img class="autoSlide" src="Images/slide6.jpg" style="width:100%;display:none;border-radius:8px;object-fit:contain;">
 
 </div>
 
 <script>
 let autoIndex = 0;
 autoCarousel();
+adjustHeights();
 
 function autoCarousel() {
-  let i;
   let slides = document.getElementsByClassName("autoSlide");
-  for (i = 0; i < slides.length; i++) {
+  for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
   autoIndex++;
   if (autoIndex > slides.length) { autoIndex = 1; }
   slides[autoIndex - 1].style.display = "block";
-  setTimeout(autoCarousel, 3000); // 3 seconds
+  setTimeout(autoCarousel, 3000);
 }
+
+function adjustHeights() {
+  let slides = document.getElementsByClassName("autoSlide");
+  let isMobile = window.innerWidth <= 600;
+
+  for (let i = 0; i < slides.length; i++) {
+    if (isMobile) {
+      // FULL HEIGHT ON MOBILE (NO CROPPING)
+      slides[i].style.height = "auto";
+      slides[i].style.objectFit = "contain";
+    } else {
+      // HALF HEIGHT ON DESKTOP
+      slides[i].style.height = "20vw";  // adjust as needed
+      slides[i].style.objectFit = "cover";
+    }
+  }
+}
+
+window.onresize = adjustHeights;
 </script>
 
 
