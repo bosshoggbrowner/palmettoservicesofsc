@@ -1,39 +1,32 @@
 <!DOCTYPE HTML>
-<html>
-<head>
 <html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Palmetto Services LLC of SC - Portfolio</title>
+
 <style>
 body {
-  
   font-family: Arial, Helvetica, sans-serif;
   background-color: #000000;
-  color: white
-       }
-  .center {
-    text-align: center;
-  }
-  
-  img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
- .navbar {
+  color: white;
   margin: 0;
-   overflow: hidden;
-  background-color: #333;  
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
-  
+
+.center { text-align: center; }
+
+a { color: #4EA5D9; }
+
+/* HEADER */
 .header {
   overflow: hidden;
   background-color: #000000;
   padding: 20px 10px;
+  position: relative;
+  z-index: 10000;
 }
+
 .header a {
   margin: 0;
   float: left;
@@ -41,49 +34,65 @@ body {
   text-align: center;
   padding: 12px;
   text-decoration: none;
-  font-size: 18px; 
+  font-size: 18px;
   line-height: 25px;
   border-radius: 4px;
 }
+
 .header a.logo {
   font-size: 25px;
   font-weight: bold;
 }
+
 .header a:hover {
   background-color: #4C4C4C;
   color: white;
 }
+
 .header a.active {
   background-color: #000080;
   color: white;
 }
+
 .header-right {
   float: right;
 }
-@media screen and (max-width: 500px) {
+
+/* HAMBURGER ICON */
+#menuIcon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  float: right;
+  padding: 10px;
+}
+
+/* MOBILE MENU */
+@media screen and (max-width: 600px) {
+  .header-right {
+    display: none;
+    width: 100%;
+    background-color: #000000;
+    text-align: left;
+    padding-top: 10px;
+    float: none;
+  }
+
   .header a {
     float: none;
     display: block;
-    text-align: left;
+    padding: 14px;
+    border-bottom: 1px solid #333;
   }
-  
-  .header-right {
-    float: none;
-  }
-  
-}
-  
-  img {
+
+  #menuIcon {
     display: block;
-    margin-left: auto
-    margin-right: auto
   }
-   
-  a {
-  color: #4EA5D9
-  }
-  
-  .card {
+}
+
+/* PRODUCT CARD STYLES */
+.card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
   margin: auto;
@@ -111,24 +120,28 @@ body {
 .card button:hover {
   opacity: 0.7;
 }
-  
 </style>
-  
-<title>Palmetto Services LLC of SC - Portfolio</title>
-  
+
 </head>
-  
+
 <body>
- 
-    
+
+<!-- UPDATED HEADER WITH MATCHING MENU -->
 <div class="header">
-  
-  <a href="index.html"> <img src="Images/bd500.png" align="left" style="width:60px;height:60px"></a>
-   <a href="services.html" class="logo">Palmetto Services LLC of SC</a>
-  
-    <div class="header-right">
+
+  <a href="index.html">
+    <img src="Images/PSLogo.jpg" align="left" style="width:60px;height:60px;">
+  </a>
+
+  <a href="services.html" class="logo">Palmetto Services LLC of SC</a>
+
+  <!-- HAMBURGER ICON -->
+  <span id="menuIcon" onclick="toggleMenu()">☰</span>
+
+  <!-- NAV LINKS -->
+  <div class="header-right" id="mobileMenu">
     <a href="index.html">Home</a>
-	  <a href="services.html">Services</a>
+    <a href="services.html">Services</a>
     <a class="active" href="portfolio.html">Portfolio</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
@@ -136,70 +149,81 @@ body {
 
 </div>
 
+<!-- PAGE CONTENT -->
+<h2 style="text-align:center">Shop Our Designs</h2>
 
-  
-      <h2 style="text-align:center">Shop Our Designs</h2>
-  
-   <div class="center">
-     
-     <p>Buy one of our original designs or <br><a href="contact.html">Contact Us</a> to customize!</p>
-    
-   </div>
- 
-    <div class="card">
-  <img src="Images/kissmeimdrunkmockup.png" alt="Hard Knocks University T-Shirt" style="width:100%">
+<div class="center">
+  <p>Buy one of our original designs or <br><a href="contact.html">Contact Us</a> to customize!</p>
+</div>
+
+<!-- PRODUCT CARDS -->
+<div class="card">
+  <img src="Images/kissmeimdrunkmockup.png" alt="Kiss Me I'm Drunk T-Shirt" style="width:100%">
   <h1>Kiss Me I'm (Irish) Drunk T-Shirt</h1>
   <p class="price">Starting at $19.5</p>
   <p>You don't have to be Irish to have fun on St. Patrick's Day!</p>
-    <p><a href="https://www.etsy.com/listing/767406590/kiss-me-im-irish-drink-t-shirt?ref=listings_manager_grid" target="_blank"><button>Buy on Etsy</button></a></p>
-  </div>
-  <br>
-  <br>
-  <div class="card">
+  <p><a href="https://www.etsy.com/listing/767406590/kiss-me-im-irish-drink-t-shirt?ref=listings_manager_grid" target="_blank"><button>Buy on Etsy</button></a></p>
+</div>
+
+<br><br>
+
+<div class="card">
   <img src="Images/hardknocksuniversitymockup.png" alt="Hard Knocks University T-Shirt" style="width:100%">
   <h1>Hard Knocks University T-Shirt</h1>
   <p class="price">Starting at $14</p>
   <p>Street smarts beat book smarts any day.</p>
-    <p><a href="https://www.etsy.com/listing/780031253/hard-knocks-university-short-sleeve?ref=listings_manager_grid" target="_blank"><button>Buy on Etsy</button></a></p>
-  </div>
-  <br>
-  <br>
-    <div class="card">
+  <p><a href="https://www.etsy.com/listing/780031253/hard-knocks-university-short-sleeve?ref=listings_manager_grid" target="_blank"><button>Buy on Etsy</button></a></p>
+</div>
+
+<br><br>
+
+<div class="card">
   <img src="Images/chicksdigdadbodsmockupwood1000.png" alt="Chicks Dig Dad Bods T-Shirt" style="width:100%">
   <h1>Chicks Dig Dad Bods T-Shirt</h1>
   <p class="price">Starting at $18.99</p>
   <p>There is just something about 'em.</p>
-    <p><a href="https://www.etsy.com/listing/776766775/chicks-dig-dad-bods-tank-top?ref=shop_home_active_4" target="_blank" target="_blank"><button>Buy on Etsy</button></a></p>
-  </div>
-  <br>
-  <br>
-      <div class="card">
+  <p><a href="https://www.etsy.com/listing/776766775/chicks-dig-dad-bods-tank-top?ref=shop_home_active_4" target="_blank"><button>Buy on Etsy</button></a></p>
+</div>
+
+<br><br>
+
+<div class="card">
   <img src="Images/hyrulefieldequestrianmockup.png" alt="Hyrule Field Equestrian T-Shirt" style="width:100%">
   <h1>Hyrule Field Equestrian T-Shirt</h1>
   <p class="price">Starting at $14</p>
   <p>The premier horseback riding squad. Just ask Epona.</p>
-    <p><a href="https://www.etsy.com/listing/780047451/hyrule-field-equestrian-short-sleeve?ref=shop_home_active_1" target="_blank" target="_blank"><button>Buy on Etsy</button></a></p>
-  </div>
-  <br>
-  <br>
-        <div class="card">
+  <p><a href="https://www.etsy.com/listing/780047451/hyrule-field-equestrian-short-sleeve?ref=shop_home_active_1" target="_blank"><button>Buy on Etsy</button></a></p>
+</div>
+
+<br><br>
+
+<div class="card">
   <img src="Images/mushroomkingdomhighjumpmockup.png" alt="Mushroom Kingdom High Jump Hoodie" style="width:100%">
   <h1>Mushroom Kingdom High Jump Hoodie</h1>
   <p class="price">Starting at $28</p>
   <p>Grab a mushroom and jump higher than the competition!</p>
-    <p><a href="https://www.etsy.com/listing/766441710/mushroom-kingdom-high-jump-unisex-hoodie?ref=listings_manager_grid" target="_blank" target="_blank"><button>Buy on Etsy</button></a></p>
-  </div>
-  <br>
-  <br>
-        <div class="card">
+  <p><a href="https://www.etsy.com/listing/766441710/mushroom-kingdom-high-jump-unisex-hoodie?ref=listings_manager_grid" target="_blank"><button>Buy on Etsy</button></a></p>
+</div>
+
+<br><br>
+
+<div class="card">
   <img src="Images/threeheartsmockup.png" alt="Three Hearts T-Shirt" style="width:100%">
   <h1>Three Hearts T-Shirt</h1>
   <p class="price">Starting at $14</p>
   <p>It's dangerous to go alone! Watch out for monsters!</p>
-    <p><a href="https://www.etsy.com/listing/781400675/three-hearts-short-sleeve-unisex-t-shirt?ref=listings_manager_grid" target="_blank" target="_blank"><button>Buy on Etsy</button></a></p>
-  </div>
-  <br>
-  <br>  
-  
+  <p><a href="https://www.etsy.com/listing/781400675/three-hearts-short-sleeve-unisex-t-shirt?ref=listings_manager_grid" target="_blank"><button>Buy on Etsy</button></a></p>
+</div>
+
+<br><br>
+
+<!-- MOBILE MENU SCRIPT -->
+<script>
+function toggleMenu() {
+  var menu = document.getElementById("mobileMenu");
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+</script>
+
 </body>
 </html>
