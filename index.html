@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+consider this index html page but dont do anything: <!DOCTYPE HTML>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -97,26 +97,52 @@ img { vertical-align: middle; }
 .mySlides { display: none; }
 .cursor { cursor: pointer; }
 
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  user-select: none;
+}
+
+.next { right: 0; }
+.prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 16.66%;
+}
+
 .demo {
   opacity: 0.6;
 }
 
 .active, .demo:hover {
   opacity: 1;
-}
-
-/* RESPONSIVE SLIDESHOW IMAGES */
-.mySlides img {
-  width: 40%;
-  max-height: 400px;
-  object-fit: contain;
-}
-
-@media screen and (max-width: 600px) {
-  .mySlides img {
-    width: 90% !important;
-    max-height: 300px !important;
-  }
 }
 
 a { color: #4EA5D9; }
@@ -161,6 +187,7 @@ a { color: #4EA5D9; }
 ">
 </div>
   
+  
 <!-- ABOUT TEXT -->
 <div style="max-width:60%;width:90%;margin:0 auto;text-align:center;font-size:18px;line-height:1.6;">
   <p>
@@ -195,35 +222,34 @@ a { color: #4EA5D9; }
 <!-- SLIDESHOW -->
 <div class="container">
 
-  <!-- LARGE SLIDES -->
   <div class="mySlides">
     <div class="numbertext">1 / 6</div>
-    <img src="Images/Feature1.jpg" onclick="openImage(this.src)">
+    <img src="Images/Feature1.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">2 / 6</div>
-    <img src="Images/Feature2.jpg" onclick="openImage(this.src)">
+    <img src="Images/Feature2.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">3 / 6</div>
-    <img src="Images/Feature3.jpg" onclick="openImage(this.src)">
+    <img src="Images/Feature3.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">4 / 6</div>
-    <img src="Images/Feature4.jpg" onclick="openImage(this.src)">
+    <img src="Images/Feature4.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">5 / 6</div>
-    <img src="Images/Feature5.jpg" onclick="openImage(this.src)">
+    <img src="Images/Feature5.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">6 / 6</div>
-    <img src="Images/Feature6.jpg" onclick="openImage(this.src)">
+    <img src="Images/Feature6.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
 
   <!-- ARROWS -->
