@@ -160,9 +160,9 @@ function adjustHeights() {
       slides[i].style.height = "auto";
       slides[i].style.objectFit = "contain";
     } else {
-      // HALF HEIGHT ON DESKTOP — NO CROPPING
-      slides[i].style.maxHeight = "250px";  // adjust height here
-      slides[i].style.height = "250px";
+      // LARGER IMAGES ON DESKTOP — NO CROPPING
+      slides[i].style.maxHeight = "400px";  // <-- increased height
+      slides[i].style.height = "400px";
       slides[i].style.objectFit = "contain";
     }
   }
@@ -170,7 +170,7 @@ function adjustHeights() {
 
 window.onresize = adjustHeights;
 </script>
-
+  
 <!-- SERVICE DESCRIPTION SECTION -->
 <div style="max-width:70%;width:90%;margin:40px auto;text-align:center;font-size:18px;line-height:1.6;">
   <h2 style="margin-bottom:10px;">Our Services</h2>
