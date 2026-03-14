@@ -224,44 +224,32 @@ a { color: #4EA5D9; }
 
   <div class="mySlides">
     <div class="numbertext">1 / 6</div>
-    <a href="portfolio.html" target="_blank">
-      <img src="Images/Feature1.jpg" style="width:40%">
-    </a>
+    <img src="Images/Feature1.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">2 / 6</div>
-    <a href="portfolio.html" target="_blank">
-          <img src="Images/Feature2.jpg" style="width:40%">
-    </a>
+    <img src="Images/Feature2.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">3 / 6</div>
-    <a href="portfolio.html" target="_blank">
-          <img src="Images/Feature3.jpg" style="width:40%">
-    </a>
+    <img src="Images/Feature3.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">4 / 6</div>
-    <a href="portfolio.html" target="_blank">
-          <img src="Images/Feature4.jpg" style="width:40%">
-    </a>
+    <img src="Images/Feature4.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">5 / 6</div>
-    <a href="portfolio.html" target="_blank">
-          <img src="Images/Feature5.jpg" style="width:40%">
-    </a>
+    <img src="Images/Feature5.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">6 / 6</div>
-    <a href="portfolio.html" target="_blank">
-          <img src="Images/Feature6.jpg" style="width:40%">
-    </a>
+    <img src="Images/Feature6.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
 
   <!-- ARROWS -->
@@ -348,4 +336,55 @@ function showSlides(n) {
 }
 </script>
 
+<!-- IMAGE POPUP OVERLAY -->
+<div id="imgPopup"
+     style="
+       display:none;
+       position:fixed;
+       top:0;
+       left:0;
+       width:100%;
+       height:100%;
+       background:rgba(0,0,0,0.9);
+       z-index:9999;
+       text-align:center;
+       padding-top:40px;
+     ">
+  
+  <!-- CLOSE BUTTON -->
+  <span onclick="closeImage()"
+        style="
+          position:absolute;
+          top:20px;
+          right:30px;
+          font-size:40px;
+          color:white;
+          cursor:pointer;
+          font-weight:bold;
+        ">
+    ✕
+  </span>
+
+  <!-- LARGE IMAGE -->
+  <img id="popupImg"
+       style="
+         max-width:90%;
+         max-height:85%;
+         border-radius:8px;
+       ">
+</div>
+
+<!-- POPUP SCRIPT -->
+<script>
+function openImage(src) {
+  document.getElementById("popupImg").src = src;
+  document.getElementById("imgPopup").style.display = "block";
+}
+
+function closeImage() {
+  document.getElementById("imgPopup").style.display = "none";
+}
+</script>
+
 </body>
+</html>
