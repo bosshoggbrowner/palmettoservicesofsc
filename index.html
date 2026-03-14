@@ -97,46 +97,6 @@ img { vertical-align: middle; }
 .mySlides { display: none; }
 .cursor { cursor: pointer; }
 
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  user-select: none;
-}
-
-.next { right: 0; }
-.prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
-
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.column {
-  float: left;
-  width: 16.66%;
-}
-
 .demo {
   opacity: 0.6;
 }
@@ -222,6 +182,28 @@ a { color: #4EA5D9; }
 <!-- SLIDESHOW -->
 <div class="container">
 
+  <!-- THUMBNAILS ABOVE -->
+  <div class="row" style="margin-bottom:15px;">
+    <div class="column">
+      <img class="demo cursor" src="Images/Feature1.jpg" style="width:80%" onclick="currentSlide(1)" alt="Featured Work 1">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Images/Feature2.jpg" style="width:80%" onclick="currentSlide(2)" alt="Featured Work 2">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Images/Feature3.jpg" style="width:80%" onclick="currentSlide(3)" alt="Featured Work 3">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Images/Feature4.jpg" style="width:80%" onclick="currentSlide(4)" alt="Featured Work 4">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Images/Feature5.jpg" style="width:80%" onclick="currentSlide(5)" alt="Featured Work 5">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Images/Feature6.jpg" style="width:80%" onclick="currentSlide(6)" alt="Featured Work 6">
+    </div>
+  </div>
+
   <!-- TOP BAR: ARROWS + CAPTION -->
   <div style="
     width:100%;
@@ -270,7 +252,7 @@ a { color: #4EA5D9; }
 
   </div>
 
-  <!-- SLIDES -->
+  <!-- LARGE SLIDES -->
   <div class="mySlides">
     <img src="Images/Feature1.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
@@ -293,28 +275,6 @@ a { color: #4EA5D9; }
 
   <div class="mySlides">
     <img src="Images/Feature6.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
-  </div>
-
-  <!-- THUMBNAILS -->
-  <div class="row" style="margin-top:15px;">
-    <div class="column">
-      <img class="demo cursor" src="Images/Feature1.jpg" style="width:80%" onclick="currentSlide(1)" alt="Featured Work 1">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="Images/Feature2.jpg" style="width:80%" onclick="currentSlide(2)" alt="Featured Work 2">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="Images/Feature3.jpg" style="width:80%" onclick="currentSlide(3)" alt="Featured Work 3">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="Images/Feature4.jpg" style="width:80%" onclick="currentSlide(4)" alt="Featured Work 4">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="Images/Feature5.jpg" style="width:80%" onclick="currentSlide(5)" alt="Featured Work 5">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="Images/Feature6.jpg" style="width:80%" onclick="currentSlide(6)" alt="Featured Work 6">
-    </div>
   </div>
 
 </div>
@@ -369,7 +329,6 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
 
-  /* Caption now appears ABOVE the image */
   captionText.innerHTML = dots[slideIndex - 1].alt;
 }
 </script>
@@ -420,4 +379,9 @@ function openImage(src) {
 }
 
 function closeImage() {
-  document.getElementById("imgPopup").style.display = "none
+  document.getElementById("imgPopup").style.display = "none";
+}
+</script>
+
+</body>
+</html>
