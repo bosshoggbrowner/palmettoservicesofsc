@@ -222,81 +222,46 @@ a { color: #4EA5D9; }
 <!-- SLIDESHOW -->
 <div class="container">
 
-  <!-- TOP BAR: ARROWS + CAPTION -->
-  <div style="
-    width:100%;
-    text-align:center;
-    margin-bottom:10px;
-    position:relative;
-  ">
-
-    <!-- LEFT ARROW -->
-    <span onclick="plusSlides(-1)"
-          style="
-            cursor:pointer;
-            font-size:26px;
-            font-weight:bold;
-            position:absolute;
-            left:0;
-            top:50%;
-            transform:translateY(-50%);
-            padding:10px;
-          ">
-      ❮
-    </span>
-
-    <!-- CAPTION -->
-    <span id="caption"
-          style="
-            font-size:20px;
-            font-weight:bold;
-          ">
-    </span>
-
-    <!-- RIGHT ARROW -->
-    <span onclick="plusSlides(1)"
-          style="
-            cursor:pointer;
-            font-size:26px;
-            font-weight:bold;
-            position:absolute;
-            right:0;
-            top:50%;
-            transform:translateY(-50%);
-            padding:10px;
-          ">
-      ❯
-    </span>
-
-  </div>
-
-  <!-- SLIDES -->
   <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
     <img src="Images/Feature1.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
 
   <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
     <img src="Images/Feature2.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
 
   <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
     <img src="Images/Feature3.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
 
   <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
     <img src="Images/Feature4.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
 
   <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
     <img src="Images/Feature5.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
 
   <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
     <img src="Images/Feature6.jpg" style="width:40%;cursor:pointer;" onclick="openImage(this.src)">
   </div>
 
+  <!-- ARROWS -->
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
   <!-- THUMBNAILS -->
-  <div class="row" style="margin-top:15px;">
+  <div class="row">
     <div class="column">
       <img class="demo cursor" src="Images/Feature1.jpg" style="width:80%" onclick="currentSlide(1)" alt="Featured Work 1">
     </div>
@@ -316,7 +281,6 @@ a { color: #4EA5D9; }
       <img class="demo cursor" src="Images/Feature6.jpg" style="width:80%" onclick="currentSlide(6)" alt="Featured Work 6">
     </div>
   </div>
-
 </div>
 
 <!-- FOOTER TEXT -->
@@ -368,8 +332,6 @@ function showSlides(n) {
 
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
-
-  /* Caption now appears ABOVE the image */
   captionText.innerHTML = dots[slideIndex - 1].alt;
 }
 </script>
