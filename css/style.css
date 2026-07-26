@@ -108,6 +108,12 @@ footer{background:var(--navy-dark);color:#C7CDD6;padding:40px 0 28px;}
 .footer-phone{font-family:'Space Mono',monospace;color:var(--pine);font-size:14px;}
 .footer-meta{border-top:1px solid #2A3A54;padding-top:18px;font-size:12px;color:#8D96A5;}
 
+/* site credit */
+.site-credit{background:var(--ink);padding:14px 0;text-align:center;}
+.site-credit p{font-size:12px;color:#8A8F85;}
+.site-credit a{color:var(--pine);font-weight:600;}
+.site-credit a:hover{text-decoration:underline;}
+
 @media (max-width:720px){
   nav{display:none;}
   .hero h1{font-size:30px;}
