@@ -1,215 +1,119 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Palmetto Services LLC of SC - About</title>
-
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #000000;
-  color: white;
-  margin: 0;
-}
-
-.center { text-align: center; }
-
-a { color: #4EA5D9; }
-
-/* HEADER */
-.header {
-  overflow: hidden;
-  background-color: #000000;
-  padding: 20px 10px;
-  position: relative;
-  z-index: 10000;
-}
-
-.header a {
-  margin: 0;
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 4px;
-}
-
-.header a.logo {
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.header a:hover {
-  background-color: #4C4C4C;
-  color: white;
-}
-
-.header a.active {
-  background-color: #000080;
-  color: white;
-}
-
-.header-right {
-  float: right;
-}
-
-/* HAMBURGER ICON */
-#menuIcon {
-  display: none;
-  font-size: 30px;
-  cursor: pointer;
-  color: white;
-  float: right;
-  padding: 10px;
-}
-
-/* MOBILE MENU */
-@media screen and (max-width: 600px) {
-  .header-right {
-    display: none;
-    width: 100%;
-    background-color: #000000;
-    text-align: left;
-    padding-top: 10px;
-    float: none;
-  }
-
-  .header a {
-    float: none;
-    display: block;
-    padding: 14px;
-    border-bottom: 1px solid #333;
-  }
-
-  #menuIcon {
-    display: block;
-  }
-}
-</style>
-
+<title>Services | Palmetto Services LLC of SC</title>
+<meta name="description" content="Kitchen and bath remodeling, custom carpentry, flooring, painting, drywall, plumbing, electrical, and security camera installation across South Carolina.">
+<link rel="canonical" href="https://palmettoservicesllcofsc.com/services">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Public+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<!-- UPDATED HEADER WITH MATCHING MENU -->
-<div class="header">
-
-  <a href="index.html">
-    <img src="Images/PSLogo.jpg" align="left" style="width:60px;height:60px;">
-  </a>
-
-  <a href="services.html" class="logo">Palmetto Services LLC of SC</a>
-
-  <!-- HAMBURGER ICON -->
-  <span id="menuIcon" onclick="toggleMenu()">☰</span>
-
-  <!-- NAV LINKS -->
-  <div class="header-right" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a class="active" href="services.html">Services</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+<header>
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img src="Images/palmetto-logo.png" alt="Palmetto Services LLC of SC logo" style="width:44px;height:auto;border-radius:4px;display:block;">
+      <div class="brand-text">
+        <span class="brand-name">Palmetto Services</span>
+        <span class="brand-sub">LLC OF SC</span>
+      </div>
+    </a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" aria-current="page">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="tel:8034678308" class="call-btn">803-467-8308</a>
   </div>
+</header>
 
-</div>
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">What we do</span>
+    <h1>Three trades, one crew &mdash; no subcontractors to chase down.</h1>
+    <p>From a single repair to a full renovation, here&rsquo;s everything Palmetto Services LLC of SC handles in-house.</p>
+  </div>
+</section>
 
-<!-- PAGE CONTENT -->
-<!-- AUTO CAROUSEL SECTION -->
-<div style="width:100%;max-width:700px;margin:30px auto;text-align:center;position:relative;">
+<section>
+  <div class="wrap">
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-6 9 6v11a1 1 0 01-1 1h-5v-7H9v7H4a1 1 0 01-1-1z"/></svg></div>
+        <h3>Renovation &amp; carpentry</h3>
+        <ul>
+          <li>Kitchen &amp; bathroom remodeling</li>
+          <li>Custom cabinetry</li>
+          <li>Custom carpentry</li>
+          <li>Trim carpentry</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M6 21V10l6-6 6 6v11M9 21v-6h6v6"/></svg></div>
+        <h3>Finishes &amp; installation</h3>
+        <ul>
+          <li>Flooring installation</li>
+          <li>Interior &amp; exterior painting</li>
+          <li>Tile work</li>
+          <li>Front door &amp; sliding door installation</li>
+          <li>Drywall repair &amp; installation</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="14" height="10" rx="1"/><path d="M16 10l6-3v10l-6-3"/></svg></div>
+        <h3>Systems &amp; security</h3>
+        <ul>
+          <li>Plumbing services</li>
+          <li>Electrical services</li>
+          <li>Security camera installation</li>
+          <li>No monthly monitoring fees</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- Slides -->
-  <img class="autoSlide" src="Images/slide1.jpg" style="width:100%;display:none;border-radius:8px;object-fit:contain;">
-  <img class="autoSlide" src="Images/slide2.jpg" style="width:100%;display:none;border-radius:8px;object-fit:contain;">
-  <img class="autoSlide" src="Images/slide3.jpg" style="width:100%;display:none;border-radius:8px;object-fit:contain;">
-  <img class="autoSlide" src="Images/slide4.jpg" style="width:100%;display:none;border-radius:8px;object-fit:contain;">
-  <img class="autoSlide" src="Images/slide5.jpg" style="width:100%;display:none;border-radius:8px;object-fit:contain;">
-  <img class="autoSlide" src="Images/slide6.jpg" style="width:100%;display:none;border-radius:8px;object-fit:contain;">
+<section class="section-fog">
+  <div class="wrap">
+    <div class="cta-banner">
+      <div>
+        <h2>Have a project in mind?</h2>
+        <p>Tell us what you need and we&rsquo;ll follow up with a free estimate.</p>
+      </div>
+      <a href="contact.html" class="btn-primary">Get a free estimate</a>
+    </div>
+  </div>
+</section>
 
-</div>
-
-<script>
-let autoIndex = 0;
-autoCarousel();
-adjustHeights();
-
-function autoCarousel() {
-  let slides = document.getElementsByClassName("autoSlide");
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  autoIndex++;
-  if (autoIndex > slides.length) { autoIndex = 1; }
-  slides[autoIndex - 1].style.display = "block";
-  setTimeout(autoCarousel, 3000);
-}
-
-function adjustHeights() {
-  let slides = document.getElementsByClassName("autoSlide");
-  let isMobile = window.innerWidth <= 600;
-
-  for (let i = 0; i < slides.length; i++) {
-    if (isMobile) {
-      // FULL HEIGHT ON MOBILE — NO CROPPING
-      slides[i].style.maxHeight = "none";
-      slides[i].style.height = "auto";
-      slides[i].style.objectFit = "contain";
-    } else {
-      // LARGER IMAGES ON DESKTOP — NO CROPPING
-      slides[i].style.maxHeight = "400px";  // <-- increased height
-      slides[i].style.height = "400px";
-      slides[i].style.objectFit = "contain";
-    }
-  }
-}
-
-window.onresize = adjustHeights;
-</script>
-  
-<!-- SERVICE DESCRIPTION SECTION -->
-<div style="max-width:70%;width:90%;margin:40px auto;text-align:center;font-size:18px;line-height:1.6;">
-  <h2 style="margin-bottom:10px;">Our Services</h2>
-  <p>
-    We proudly offer a wide range of home‑improvement and home security services, including:
-  </p>
-
-  <p style="margin-top:20px;">
-    <strong>• Kitchen & Bathroom Remodeling<br>
-    • Flooring Installation<br>
-    • Interior & Exterior Painting<br>
-    • Custom Cabinetry<br>
-    • Custom Carpentry<br>
-    • Trim Carpentry<br>
-    • Front Door & Sliding Door Installation<br>
-    • Tile Work<br>
-    • Drywall Repair & Installation<br>
-    • Plumbing Services<br>
-    • Electrical Services<br>
-    • Security Camera Installation (No Monthly Fees)</strong>
-  </p>
-</div>
-
-  <!-- FOOTER TEXT -->
-<div class="center">
-  <p>
-    <br>Check out the <a href="portfolio.html">Portfolio Page</a> to see more of our work.
-    <br><br>
-    If you would like more information, visit our <a href="contact.html">Contact Page</a>.
-  </p>
-</div>
-
-  <!-- MOBILE MENU SCRIPT -->
-<script>
-function toggleMenu() {
-  var menu = document.getElementById("mobileMenu");
-  menu.style.display = (menu.style.display === "block") ? "none" : "block";
-}
-</script>
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <img src="Images/palmetto-logo.png" alt="Palmetto Services LLC of SC logo" style="width:38px;height:auto;border-radius:4px;display:block;">
+        <div>
+          <div class="footer-brand">Palmetto Services LLC of SC</div>
+          <div class="footer-phone" style="margin-top:4px;"><a href="tel:8034678308">803-467-8308</a></div>
+        </div>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-meta">&copy; 2026 Palmetto Services LLC of SC &middot; South Carolina</div>
+  </div>
+</footer>
 
 </body>
 </html>
